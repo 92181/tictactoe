@@ -1,3 +1,3 @@
 # TicTacToe JS
 
-Basic and plain version of the game TicTacToe, it is fairly hardcoded but still adaptable. Hopefully some use to someone.
+Basic version of the game TicTacToe written in Javascript, displayed on a canvas. Keeps track of the player scores and allows the player to reset the game and score. The file can be opened by any modern browser.
