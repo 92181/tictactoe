@@ -1,30 +1,257 @@
-<!doctype html><title>TicTacToe</title><body style='background:#000;margin:0;overflow:hidden'><canvas></canvas><script>
+<!doctype html><html>
+<head>
+  <title>TicTacToe</title>
+  <style>
+    body {
+      background:#000;
+      overflow:hidden;
+      margin:0;
+    }
+  </style>
+</head>
+<body>
+  <canvas></canvas>
+<script>
+// Define Variables;
+let z=[0,0,0,0,0,0,0,0,0],kr=1,ye=0,Ya=0,Ys=0;
 
-function yr(){c1.clearRect(yd,Yo-Yi,yf,gc*30);c1.fillText('SCORE  '+Ya+' - '+Ys,yd,Yo)}function yp(){if(Yp){Ya+=1;yr()}else{Ys+=1;yr()}Yd=Yf=0}function yi(x,y){c1.beginPath();c1.arc(x,y,ya,0,Math.PI*2);c1.closePath();c1.stroke()}function yo(x,y){c1.beginPath();c1.moveTo(x-ys,y-ys);c1.lineTo(x+ys,y+ys);c1.moveTo(x-ys,y+ys);c1.lineTo(x+ys,y-ys);c1.stroke()}
+function yr(){c1.clearRect(yd,Yo-Yi,yf,gc*30);c1.fillText('SCORE  '+Ya+' - '+Ys,yd,Yo)}function yi(x,y){c1.beginPath();c1.arc(x,y,ya,0,Math.PI*2);c1.closePath();c1.stroke()}function yo(x,y){c1.beginPath();c1.moveTo(x-ys,y-ys);c1.lineTo(x+ys,y+ys);c1.moveTo(x-ys,y+ys);c1.lineTo(x+ys,y-ys);c1.stroke()}
 p=document.querySelector('canvas'),c1=p.getContext("2d");rh=window.devicePixelRatio;gc=window.innerWidth*rh/1500;function f0(){p.style.width=window.innerWidth+"px";p.style.height=window.innerHeight+"px";p.width=window.innerWidth*rh;p.height=window.innerHeight*rh;c1.clearRect(0,0,p.width,p.height);yy()};f0();window.onresize=f0;
-function yt(){c1.clearRect(yl,Yo-Yi,yf,gc*30);if(ye){ye=0;c1.fillText('PLAYER',yl+gc*105,Yo)}else{ye=1;c1.fillText('COMPUTER',yl+gc*60,Yo)}}function yy(){ya=gc*55,ys=gc*50,yd=gc*420,yk=gc*120,yf=gc*200,yg=gc*400,yh=gc*600,yj=gc*6,Yo=yk-gc*50,yl=yg+yd,yz=yh+yd,yx=yg+yk,yc=yh+yk,yv=gc*100,yb=yv+yd,yn=gc*303,ym=yn+yd,Yq=gc*506,Yw=Yq+yd,Ye=yv+yk,Yr=yn+yk,Yt=Yq+yk,Yy=yf+yd,Yu=yf+yk;Yi=gc*24;c1.fillStyle=c1.strokeStyle='#fff';c1.lineWidth=gc*17;c1.lineCap='round';c1.font=Yi+'px arial';Yh();yr();c1.fillText('RESTART',yd+gc*244,Yo);yt()}
-function yu(){c1.clearRect(yd,yk,yh,yh);c1.fillRect(yd,Yu,yh,yj);c1.fillRect(yd,yx,yh,yj);c1.fillRect(Yy,yk,yj,yh);c1.fillRect(yl,yk,yj,yh)}function Yh(){Yp=Ya=Ys=Yf=ye=0;yu();Y1=Y2=Y3=Y4=Y5=Y6=Y7=Y8=Y9=Yd=2;Yf=0}
-function yw(){y0=[];yq=0;if(Y1==2){y0[yq]=1;yq+=1}if(Y2==2){y0[yq]=2;yq+=1}if(Y3==2){y0[yq]=3;yq+=1}if(Y4==2){y0[yq]=4;yq+=1}if(Y5==2){y0[yq]=5;yq+=1}if(Y6==2){y0[yq]=6;yq+=1}if(Y7==2){y0[yq]=7;yq+=1}if(Y8==2){y0[yq]=8;yq+=1}if(Y9==2){y0[yq]=9;yq+=1}Yg=y0[parseInt(Math.random()/(1/yq))];if(Yg==1){y1()}else if(Yg==2){y2()}else if(Yg==3){y3()}else if(Yg==4){y4()}else if(Yg==5){y5()}else if(Yg==6){y6()}else if(Yg==7){y7()}else if(Yg==8){y8()}else{y9()}}
+function yt(){c1.clearRect(yl,Yo-Yi,yf,gc*30);if(ye){ye=0;c1.fillText('PLAYER',yl+gc*105,Yo)}else{ye=1;c1.fillText('COMPUTER',yl+gc*60,Yo)}}function yy(){ya=gc*55,ys=gc*50,yd=gc*420,yk=gc*120,yf=gc*200,yg=gc*400,yh=gc*600,yj=gc*6,Yo=yk-gc*50,yl=yg+yd,yz=yh+yd,yx=yg+yk,yc=yh+yk,yv=gc*100,yb=yv+yd,yn=gc*303,ym=yn+yd,Yq=gc*506,Yw=Yq+yd,Ye=yv+yk,Yr=yn+yk,Yt=Yq+yk,Yy=yf+yd,Yu=yf+yk;Yi=gc*24;c1.fillStyle=c1.strokeStyle='#fff';c1.lineWidth=gc*17;c1.lineCap='round';c1.font=Yi+'px arial';res();yr();c1.fillText('RESTART',yd+gc*244,Yo);yt()}
+function yu(){c1.clearRect(yd,yk,yh,yh);c1.fillRect(yd,Yu,yh,yj);c1.fillRect(yd,yx,yh,yj);c1.fillRect(Yy,yk,yj,yh);c1.fillRect(yl,yk,yj,yh)}
 
-function y1(){if(Y1==2){Y1=Yp;Yf+=1;if(Yp){Yp=0;yo(yb,Ye)}else{Yp=1;yi(yb,Ye)}if(Y2==Y1&&Y3==Y1||Y4==Y1&&Y7==Y1||Y5==Y1&&Y9==Y1){yp()}else if(ye){ye=0;if(!Y2&&Y3==2){y3()}else if(!Y3&&Y2==2){y2()}else if(!Y4&&Y7==2){y7()}else if(!Y7&&Y4==2){y4()}else if(!Y5&&Y9==2){y9()}else if(!Y9&&Y5==2){y5()}else{yw()}ye=1}}}
-function y4(){if(Y4==2){Y4=Yp;Yf+=1;if(Yp){Yp=0;yo(yb,Yr)}else{Yp=1;yi(yb,Yr)}if(Y5==Y4&&Y6==Y4||Y1==Y4&&Y7==Y4){yp()}else if(ye){ye=0;if(!Y5&&Y6==2){y6()}else if(!Y6&&Y5==2){y5()}else if(!Y1&&Y7==2){y7()}else if(!Y7&&Y1==2){y1()}else{yw()}ye=1}}}
-function y7(){if(Y7==2){Y7=Yp;Yf+=1;if(Yp){Yp=0;yo(yb,Yt)}else{Yp=1;yi(yb,Yt)}if(Y3==Y7&&Y5==Y7||Y1==Y7&&Y4==Y7||Y8==Y7&&Y9==Y7){yp()}else if(ye){ye=0;if(!Y3&&Y5==2){y5()}else if(!Y5&&Y3==2){y3()}else if(!Y1&&Y4==2){y4()}else if(!Y4&&Y1==2){y1()}else if(!Y8&&Y9==2){y9()}else if(!Y9&&Y8==2){y8()}else{yw()}ye=1}}}
-function y2(){if(Y2==2){Y2=Yp;Yf+=1;if(Yp){Yp=0;yo(ym,Ye)}else{Yp=1;yi(ym,Ye)}if(Y1==Y2&&Y3==Y2||Y5==Y2&&Y8==Y2){yp()}else if(ye){ye=0;if(!Y1&&Y3==2){y3()}else if(!Y3&&Y1==2){y1()}else if(!Y4&&Y7==2){y7()}else if(!Y7&&Y4==2){y4()}else{yw()}ye=1}}}
-function y5(){if(Y5==2){Y5=Yp;Yf+=1;if(Yp){Yp=0;yo(ym,Yr)}else{Yp=1;yi(ym,Yr)}if(Y4==Y5&&Y6==Y5||Y2==Y5&&Y8==Y5||Y3==Y5&&Y7==Y5||Y1==Y5&&Y9==Y5){yp()}else if(ye){ye=0;if(!Y4&&Y6==2){y6()}else if(!Y6&&Y4==2){y4()}else if(!Y2&&Y8==2){y8()}else if(!Y8&&Y2==2){y2()}else if(!Y3&&Y7==2){y7()}else if(!Y7&&Y3==2){y3()}else if(!Y1&&Y9==2){y9()}else if(!Y9&&Y1==2){y1()}else{yw()}ye=1}}}
-function y8(){if(Y8==2){Y8=Yp;Yf+=1;if(Yp){Yp=0;yo(ym,Yt)}else{Yp=1;yi(ym,Yt)}if(Y2==Y8&&Y5==Y8||Y7==Y8&&Y9==Y8){yp()}else if(ye){ye=0;if(!Y2&&Y5==2){y5()}else if(!Y5&&Y2==2){y2()}else if(!Y7&&Y9==2){y9()}else if(!Y9&&Y7==2){y7()}else{yw()}ye=1}}}
-function y3(){if(Y3==2){Y3=Yp;Yf+=1;if(Yp){Yp=0;yo(Yw,Ye)}else{Yp=1;yi(Yw,Ye)}if(Y1==Y3&&Y2==Y3||Y6==Y3&&Y9==Y3||Y5==Y3&&Y7==Y3){yp()}else if(ye){ye=0;if(!Y1&&Y2==2){y2()}else if(!Y2&&Y1==2){y1()}else if(!Y6&&Y9==2){y9()}else if(!Y9&&Y6==2){y6()}else if(!Y5&&Y7==2){y7()}else if(!Y7&&Y5==2){y5()}else{yw()}ye=1}}}
-function y6(){if(Y6==2){Y6=Yp;Yf+=1;if(Yp){Yp=0;yo(Yw,Yr)}else{Yp=1;yi(Yw,Yr)}if(Y3==Y6&&Y9==Y6||Y4==Y6&&Y5==Y6){yp()}else if(ye){ye=0;if(!Y3&&Y9==2){y9()}else if(!Y9&&Y3==2){y3()}else if(!Y4&&Y5==2){y5()}else if(!Y5&&Y4==2){y4()}else{yw()}ye=1}}}
-function y9(){if(Y9==2){Y9=Yp;Yf+=1;if(Yp){Yp=0;yo(Yw,Yt)}else{Yp=1;yi(Yw,Yt)}if(Y7==Y9&&Y8==Y9||Y3==Y9&&Y6==Y9||Y1==Y9&&Y5==Y9){yp()}else if(ye){ye=0;if(!Y7&&Y8==2){y8()}else if(!Y8&&Y7==2){y7()}else if(!Y3&&Y6==2){y6()}else if(!Y6&&Y3==2){y3()}else if(!Y1&&Y5==2){y5()}else if(!Y5&&Y1==2){y1()}else{yw()}ye=1}}}
+let n=yz-yl,q,c;
+
+// Reset Game;
+function res()
+{
+  Yp=Yf=0;yu();kr=1;z=[0,0,0,0,0,0,0,0,0];Yf=0;
+};
+
+// Process Win;
+function yp()
+{
+  if(kr==2)
+  {
+    Ya+=1;yr();
+  }
+  else
+  {
+    Ys+=1;yr();
+  };
+};
+
+// Detect Win;
+function win(i,p)
+{
+  switch(i)
+  {
+    case 0:
+    {
+      if(z[1]==p&&z[2]==p||z[3]==p&&z[6]==p||z[4]==p&&z[8]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 1:
+    {
+      if(z[0]==p&&z[2]==p||z[4]==p&&z[7]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 2:
+    {
+      if(z[0]==p&&z[1]==p||z[5]==p&&z[8]==p||z[4]==p&&z[6]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 3:
+    {
+      if(z[4]==p&&z[7]==p||z[0]==p&&z[6]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 4:
+    {
+      if(z[3]==p&&z[5]==p||z[1]==p&&z[7]==p||z[2]==p&&z[6]==p||z[0]==p&&z[8]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 5:
+    {
+      if(z[2]==p&&z[8]==p||z[3]==p&&z[4]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 6:
+    {
+      if(z[2]==p&&z[4]==p||z[0]==p&&z[3]==p||z[7]==p&&z[8]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 7:
+    {
+      if(z[1]==p&&z[4]==p||z[6]==p&&z[8]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+    case 8:
+    {
+      if(z[6]==p&&z[7]==p||z[2]==p&&z[5]==p||z[0]==p&&z[4]==p)
+      {
+        return 1;
+      };
+      break;
+    }
+  };
+
+  return 0;
+};
+
+// Get Drawing Position;
+function gdw(v,k)
+{
+  if(v==2){q=Yw;}else if(v){q=ym;}else{q=yb;};
+  if(k==2){c=Yt;}else if(k){c=Yr;}else{c=Ye;};
+
+  // Draw Move;
+  if(kr==2)
+  {
+    yo(q,c);kr=1;
+  }
+  else
+  {
+    yi(q,c);kr=2;
+  };
+};
+
+// Handle Computer Player;
+function dtc()
+{
+  // Check Situation;
+  let i=0;
+
+  if(Yf>2)
+  {
+    while(i<9)
+    {
+      if(z[i]==0)
+      {
+        // Detect Win;
+        if(win(i,2))
+        {
+          // Set And Draw;
+          z[i]=kr;Yf=9;yp();gdw(i%3,i/3|0);
+
+          return;
+        };
+      };
+
+      i+=1;
+    };
+
+    i=0;
+
+    while(i<9)
+    {
+      if(z[i]==0)
+      {
+        // Prevent Possible Loss;
+        if(win(i,1))
+        {
+          // Set And Draw;
+          z[i]=kr;Yf+=1;gdw(i%3,i/3|0);
+
+          return;
+        };
+      };
+
+      i+=1;
+    }
+  };
+
+  // Random Position;
+  let j=0,t=(Math.random()*(9-Yf))|0;
+  
+  i=0;
+
+  while(i<9)
+  {
+    if(z[i]==0)
+    {
+      if(j==t)
+      {
+        // Set And Draw;
+        z[i]=kr;Yf+=1;gdw(i%3,i/3|0);
+
+        break;
+      };
+
+      j+=1;
+    };
+    
+    i+=1;
+  };
+};
 
 p.onclick=function(e)
 {
   x=e.x*rh;y=e.y*rh;if(x>yd)
   {
-    if(yk>y){if(x<Yy){Ya=Ys=0;yr()}else if(x<yl){Yh()}else{yt()}}else if(Yd)
+    if(yk>y)
     {
-      if(x<Yy){if(y<Yu){y1()}else if(y<yx){y4()}else if(y<yc){y7()}}else if(x<yl){if(y<Yu){y2()}else if(y<yx){y5()}else if(y<yc){y8()}}else if(x<yz){if(y<Yu){y3()}else if(y<yx){y6()}else if(y<yc){y9()}}if(Yf>8){Yd=0}
+      // Button Click (Score, Restart, Player);
+      if(x<Yy){Ya=Ys=0;yr()}else if(x<yl){res()}else{yt()}
     }
-    else{Yh()}
-  }
-}
-</script></body>
+    else if(Yf!=9)
+    {
+      // Calculate Box Index;
+      let v=(x-yd)/n|0,k=(y-yk)/n|0,b=k*3+v;
+
+      if(z[b]==0)
+      {
+        z[b]=kr;
+
+        // Check For Win;
+        if(win(b,kr))
+        {
+          yp();Yf=9;gdw(v,k);
+        }
+        else
+        {
+          gdw(v,k);Yf+=1;
+
+          // Computer Player;
+          if(ye&&Yf!=9)
+          {
+            dtc();
+          };
+        };
+      };
+    }
+    else
+    {
+      // Reset;
+      console.log("Reset!");
+      res();
+    };
+  };
+};
+</script>
+</body>
+</html>
