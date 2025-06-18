@@ -65,13 +65,13 @@ document.querySelector("link").href="data:image/svg+xml,%3Csvg xmlns='http://www
 // Define Variables;
 let z=[0,0,0,0,0,0,0,0,0],kr=1,ye=1,Ya=0,Ys=0;
 
-let p=document.querySelector("canvas"),c1=p.getContext("2d"),rh=window.devicePixelRatio,gc=1.5,b=document.querySelectorAll("span");
+let p=document.querySelector("canvas"),c1=p.getContext("2d"),rh=window.devicePixelRatio,b=document.querySelectorAll("span");
 
 function yr(){b[0].innerHTML=Ya;b[2].innerHTML=Ys;};function yt(){if(ye){ye=0;b[1].innerHTML="1P"}else{ye=1;b[1].innerHTML="2P"}}
 
 // Draw Circle Or Cross;
 function yo(x,y){c1.beginPath();c1.moveTo(x-ys,y-ys);c1.lineTo(x+ys,y+ys);c1.moveTo(x-ys,y+ys);c1.lineTo(x+ys,y-ys);c1.stroke()};
-function yx(x,y){c1.beginPath();c1.arc(x,y,gc*55,0,Math.PI*2);c1.closePath();c1.stroke()};
+function yx(x,y){c1.beginPath();c1.arc(x,y,yf/3.8,0,Math.PI*2);c1.closePath();c1.stroke()};
 
 // Handle Resizing;
 function f0()
@@ -87,9 +87,9 @@ window.onresize=f0;f0();
 // Calculate Dimensions & Init;
 function yy()
 {
-  ys=gc*50,yf=dw*rh/3,yg=yf*2,yh=yg+yf,yj=gc*6,yv=dw*rh/6,yn=yv*3+gc*3,Yq=yv*5+yj;
-  
-  c1.fillStyle=c1.strokeStyle='#fff';c1.lineWidth=gc*17;c1.lineCap='round';
+  yf=dw*rh/3,ys=yf/4,yg=yf*2,yh=yg+yf,yj=9,yv=dw*rh/6,yn=yv*3+1.5*3,Yq=yv*5+yj;
+
+  c1.fillStyle=c1.strokeStyle='#fff';c1.lineWidth=yf/12.5;c1.lineCap='round';
 
   res();
 };
