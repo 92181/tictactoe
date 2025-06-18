@@ -1,6 +1,7 @@
 <!doctype html><html>
 <head>
   <title>Tic-Tac-Toe - Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='icon' href=""></link>
   <style> 
     @font-face{font-family: 'Ubuntu'; src: url('ubuntu.woff2')}
@@ -18,6 +19,10 @@
       width: 30rem;
       height: 30rem;
       margin-bottom: 1.2rem;
+      @media (max-width: 570px) {
+        width: 18rem;
+        height: 18rem;
+      }
     }
     #res {
       display: flex;
@@ -32,6 +37,12 @@
         gap: 0.5rem;
         & > span {
           font-size: 2.4rem;
+        }
+        @media (max-width: 570px) {
+          font-size: 1rem;
+          & > span {
+            font-size: 1.8rem;
+          }
         }
       }
     }
