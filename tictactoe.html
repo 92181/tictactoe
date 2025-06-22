@@ -67,7 +67,7 @@ let z=[0,0,0,0,0,0,0,0,0],kr=1,ye=1,Ya=0,Ys=0;
 
 let p=document.querySelector("canvas"),c1=p.getContext("2d"),rh=window.devicePixelRatio,b=document.querySelectorAll("span");
 
-function yr(){b[0].innerHTML=Ya;b[2].innerHTML=Ys;};function yt(){if(ye){ye=0;b[1].innerHTML="1P"}else{ye=1;b[1].innerHTML="2P"}}
+function yr(){b[0].innerHTML=Ya;b[2].innerHTML=Ys;};function yt(){if(ye){ye=0;b[1].innerHTML="2P"}else{ye=1;b[1].innerHTML="1P"}}
 
 // Draw Circle Or Cross;
 function yo(x,y){c1.beginPath();c1.moveTo(x-ys,y-ys);c1.lineTo(x+ys,y+ys);c1.moveTo(x-ys,y+ys);c1.lineTo(x+ys,y-ys);c1.stroke()};
