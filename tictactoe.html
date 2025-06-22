@@ -94,14 +94,19 @@ function yy()
   res();
 };
 
-function yu(){c1.clearRect(0,0,yh,yh);c1.fillRect(0,yf,yh,yj);c1.fillRect(0,yg,yh,yj);c1.fillRect(yf,0,yj,yh);c1.fillRect(yg,0,yj,yh)};
-
 let n=yh-yg,q,c;
+
+function yu(){c1.clearRect(0,0,yh,yh);c1.fillRect(0,yf,yh,yj);c1.fillRect(0,yg,yh,yj);c1.fillRect(yf,0,yj,yh);c1.fillRect(yg,0,yj,yh)};
 
 // Reset Game;
 function res()
 {
   Yp=Yf=0;yu();kr=1;z=[0,0,0,0,0,0,0,0,0];Yf=0;
+
+  if(ye&&Ys)
+  {
+    dtc();
+  };
 };
 
 // Process Win;
@@ -284,9 +289,6 @@ function dtc()
     i+=1;
   };
 };
-
-// Button Click (Score, Restart, Player);
-//if(x<Yy){Ya=Ys=0;yr()}else if(x<yl){res()}else{yt()}
 
 p.onclick=function(e)
 {
